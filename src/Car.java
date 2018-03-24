@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Car {
 
     private String brand;
@@ -90,5 +92,13 @@ public class Car {
                 ", fuelConsumption=" + fuelConsumption +
                 ", registrationNumber='" + registrationNumber + '\''
                 ;
+    }
+
+    public static class CarComparator2 implements Comparator<Car> {
+
+        @Override
+        public int compare(Car car, Car car2) {
+            return car.getPower() - car2.getPower();
+        }
     }
 }
